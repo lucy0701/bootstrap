@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>0513-0514 숙제</title>
+</head>
+
+<style>
+	form {
+		width: 400px;
+		height: 250px;
+		background-color: rgb(204, 253, 238);
+		border-radius: 20px;
+		padding: 20px;
+		float: left;
+		border: 2px solid lightseagreen;
+		box-sizing: border-box;
+	}
+
+	.form01 {
+		height: 500px;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	.box {
+		width: 300px;
+		margin: 20px auto;
+	}
+
+	.text_box {
+		width: 70%;
+		float: right;
+	}
+
+	.btn {
+		width: 80px;
+		height: 30px;
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
+
+	#sel {
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
+</style>
+
+<body>
+
+	<form autocomplete="off" class="form01">
+		<h2>주말 숙제 : input type_1 </h2>
+
+		<div class="box">
+			<label for="id" class="name_box">ID</label>
+			<input type="text" id="id" class="text_box">
+		</div>
+
+		<div class="box">
+			<label for="pw" class="name_box">PW</label>
+			<input type="password" id="pw" class="text_box">
+		</div>
+
+		<div class="box">
+			<label for="email" class="name_box">E-MAIL</label>
+			<input type="email" id="email" class="text_box">
+		</div>
+
+		<div class="box">
+			<label for="number" class="name_box">숫자</label>
+			<input type="number" id="number" class="text_box">
+		</div>
+
+		<div class="box">
+			<label for="radio" class="name_box">범위</label>
+			<input type="range" id="radio" class="text_box">
+		</div>
+
+		<div class="box">
+			<label for="date" class="name_box">DATE</label>
+			<input type="date" id="date" class="text_box">
+		</div>
+
+		<div class="box">
+			<label for="month" class="name_box">MONTH</label>
+			<input type="month" id="month" class="text_box">
+		</div>
+
+		<div class="box">
+			<label for="time" class="name_box">TIME</label>
+			<input type="time" id="time" class="text_box">
+		</div>
+
+		<div class="box">
+			<label for="color" class="name_box">COLOR</label>
+			<input type="color" id="color" class="text_box">
+		</div>
+
+		<div class="box">
+			<button type="button" class="btn" id="btn">회원가입</button>
+		</div>
+
+	</form>
+
+
+	<form autocomplete="off">
+
+		<h2>주말 숙제 : input type_2 </h2>
+		<div class="box">
+			<label for="o_pw" class="name_box">O PW</label>
+			<input type="password" id="o_pw" class="text_box">
+		</div>
+		<div class="box">
+			<label for="n_pw" class="name_box">N PW</label>
+			<input type="password" id="n_pw" class="text_box">
+		</div>
+		<div class="box">
+			<label for="n_r_pw" class="name_box">N PW CK</label>
+			<input type="password" id="n_r_pw" class="text_box">
+		</div>
+
+		<div class="box">
+			<button type="button" class="btn" id="btn2">변경</button>
+		</div>
+
+	</form>
+
+	<script>
+
+		document.getElementById("btn").addEventListener("click", function () {
+			if (document.getElementById("id").value.trim() == "" || document.getElementById("id").value.trim() == null
+				|| document.getElementById("pw").value.trim() == "" || document.getElementById("pw").value.trim() == null) {
+				alert("작성칸이 비어 있습니다.");
+				document.getElementById("id").focus();
+			} else {
+				alert("가입을 환영합니다.");
+			}
+
+		});
+
+
+
+		document.getElementById("btn2").addEventListener("click", function () {
+			if (document.getElementById("o_pw").value.trim() == document.getElementById("n_pw").value.trim()) {
+				alert("이전에 사용했던 번호 입니다.");
+				document.getElementById("o_pw").focus();
+			} else if (document.getElementById("n_pw").value.trim() != document.getElementById("n_r_pw").value.trim()) {
+				alert("비밀번호가 다릅니다.");
+			} else {
+				alert("변경 되었습니다.");
+			}
+		});
+
+	</script>
+
+	<form autocomplete="off">
+		<h2>주말 숙제 : select </h2>
+
+		<select class="box" id="sel">
+			<option selected>저녁 고르기</option>
+			<option value="햄버거">햄버거</option>
+			<option value="피자">피자</option>
+			<option value="치킨">치킨</option>
+			<option value="마라탕">마라탕</option>
+		</select>
+
+		<div class="box">
+			<button type="button" class="btn" id="btn3">선택</button>
+		</div>
+
+	</form>
+
+	<script>
+
+		document.getElementById("btn3").addEventListener("click", function () {
+			alert("오늘 저녁은 " + document.getElementById("sel").value + " 입니다.");
+			document.getElementById("sel").value = "마라탕";
+			alert("사실 답은 " + document.getElementById("sel").value + "으로 정해져 있다.");
+		});
+
+
+	</script>
+
+	<form autocomplete="off">
+		<h2>주말 숙제 : cheks </h2>
+
+		<div class="box">
+			<input type="checkbox" value="남자" name="gender" id="m" class="ck">
+			<label class="ck_l" for="m">
+				남자
+			</label>
+		</div>
+
+		<div class="box">
+			<input type="checkbox" value="여자" name="gender" id="wm" class="ck">
+			<label class="ck_l" for="wm">
+				여자
+			</label>
+		</div>
+
+		<div class="box">
+			<input type="checkbox" value="기타" name="gender" id="etc" class="ck">
+			<label class="ck_l" for="etc">
+				기타
+			</label>
+		</div>
+
+		<div class="box">
+			<button type="button" class="btn" id="btn4">선택</button>
+		</div>
+
+	</form>
+
+	<script>
+
+		document.getElementById("btn4").addEventListener("click", function () {
+
+			var arrayGender = new Array();
+
+			var obj_length = document.getElementsByName("gender").length;
+
+			if (document.querySelectorAll('input[name="gender"]:checked').length != 1) {
+				alert("한 개를 선택해 주세요.");
+
+			} else {
+
+				for (var i = 0; i < obj_length; i++) {
+
+					if (document.getElementsByName("gender")[i].checked) {
+						alert("당신의 성별은 " + document.getElementsByName("gender")[i].value + "입니다.");
+						arrayGender.push(document.getElementsByName("gender")[i].value);
+					}
+				}
+
+				for (var i = 0; i < arrayGender.length; i++) {
+
+					console.log(arrayGender[i]);
+
+				}
+			}
+
+		});
+
+
+
+
+	</script>
+
+
+	<form autocomplete="off">
+		<h2>주말 숙제 : radios </h2>
+
+		<div class="box">
+			<input type="radio" value="남자" name="gender2" id="m2" class="ck">
+			<label class="ck_l" for="m2">
+				남자
+			</label>
+		</div>
+
+		<div class="box">
+			<input type="radio" value="여자" name="gender2" id="wm2" class="ck">
+			<label class="ck_l" for="wm2">
+				여자
+			</label>
+		</div>
+
+		<div class="box">
+			<input type="radio" value="기타" name="gender2" id="etc2" class="ck">
+			<label class="ck_l" for="etc2">
+				기타
+			</label>
+		</div>
+
+		<div class="box">
+			<button type="button" class="btn" id="btn5">선택</button>
+		</div>
+
+	</form>
+	<script>
+
+		document.getElementById("btn5").addEventListener("click", function () {
+			alert("당신의 성별은 " + document.querySelector("input[name='gender2']:checked").value + "입니다.");
+		});
+
+
+
+	</script>
+
+</body>
+
+</html>
