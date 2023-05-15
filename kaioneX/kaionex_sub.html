@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KAIONEX</title>
+	<script src="https://kit.fontawesome.com/2c78292d9a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.center {
+		width: 100vw;
+		height: 100%;
+		margin: auto;
+	}
+
+
+
+	/* 헤더 */
+	header {
+		width: 100%;
+		height: 60px;
+	}
+
+	.center h2 {
+		width: 30%;
+		height: 100%;
+		float: left;
+		line-height: 60px;
+	}
+
+	#logo {
+		width: 20%;
+		height: 100%;
+		float: left;
+
+	}
+
+	#login {
+		width: 30%;
+		height: 100%;
+		float: right;
+	}
+
+	.img {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: black;
+		float: left;
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+
+	#login span {
+		float: left;
+		margin-top: 10px;
+
+	}
+
+	#user {
+		width: 45%;
+		height: 100%;
+		float: left;
+	}
+
+	#language {
+		width: 45%;
+		height: 100%;
+		float: right;
+		margin-top: 20px;
+	}
+
+
+	/* 네비 */
+	nav {
+		width: 100%;
+		height: 50px;
+		background-color: rgb(229, 242, 251);
+	}
+
+	nav ul li {
+		margin-left: 10px;
+		display: inline-block;
+		line-height: 50px;
+	}
+
+	nav ul li a {
+		color: rgb(89, 89, 89);
+	}
+
+
+	/* 메인 */
+	#main {
+		width: 100%;
+		height: 800px;
+	}
+
+	#manu {
+		width: 20%;
+		height: 100%;
+		float: left;
+		margin-top: 10px;
+	}
+
+	#manu ul li {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	#manu ul li a {
+		width: 100%;
+		height: 40px;
+		display: block;
+		padding-left: 30px;
+		box-sizing: border-box;
+		line-height: 40px;
+		color: rgb(89, 89, 89);
+		font-size: 15px;
+	}
+
+	#manu ul li a::before {
+		content: ">";
+		margin-right: 10px;
+	}
+
+	#manu ul li:last-of-type {
+		border-top: 1px solid rgb(227, 229, 233);
+	}
+
+	#main_list h2 {
+		position: absolute;
+		top: 15px;
+	}
+
+	/* 메인 게시판 */
+	#main_list {
+		width: 80%;
+		height: 100%;
+		float: left;
+		position: relative;
+	}
+
+	#main_list_title {
+
+		background-color: rgb(33, 37, 40);
+		color: #fff;
+		font-size: 14px;
+	}
+	
+	#seq {
+		width: 100%;
+		height: 300px;
+	}
+	#nation {
+		width: 100%;
+		height: 300px;
+	}
+	#explanation {
+		width: 100%;
+		height: 300px;
+	}
+
+	/* 메인 아이콘 */
+	#page_number {
+		width: 20px;
+		height: 25px;
+		position: absolute;
+		bottom: 35%;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: rgb(49, 107, 244);
+		border-radius: 2px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 15px;
+	}
+
+
+	#box_left {
+		width: 70px;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#box_right {
+		width: 70px;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.box {
+		width: 30px;
+		height: 30px;
+		float: left;
+		font-size: 18px;
+		border-radius: 2px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.box a {
+		color: #fff;
+	}
+
+	.box01 {
+		background-color: rgb(87, 92, 98);
+	}
+
+	.box02 {
+		background-color: rgb(64, 133, 88);
+	}
+
+	/* 푸터 */
+	footer {
+		width: 100%;
+		height: 100px;
+		text-align: center;
+		padding-top: 30px;
+		box-sizing: border-box;
+		background-color: rgb(248, 249, 250);
+		font-size: 14px;
+	}
+</style>
+
+<body>
+	<header>
+		<div class="center">
+			<div id="logo">로고</div>
+			<h2>ABC MAnagement System</h2>
+			<div id="login">
+				<div id="user">
+					<div class="img"><img></div>
+					<span>이름<br>Administrator</span>
+				</div>
+				<div id="language">
+					<select name="language_box" id="language_box">
+						<option value="korean">Korean</option>
+						<option value="english">English</option>
+						<option value="japanese">Japanese</option>
+						<option value="chinese">Chinese</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<nav>
+		<div class="center">
+			<ul>
+				<li><a href="#">Navbar</a></li>
+				<li><a href="#">회원관리</a></li>
+				<li><a href="#">서비스관리</a></li>
+				<li><a href="#">사이트관리</a></li>
+				<li><a href="#">로그관리</a></li>
+				<li><a href="#">시스템관리</a></li>
+				<li><a href="#">시스템관리</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="main">
+		<div class="center">
+			<div id="manu">
+				<ul>
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">Dashboard</a></li>
+					<li><a href="#">Orders</a></li>
+					<li><a href="#">Account</a></li>
+				</ul>
+			</div>
+
+			<div id="main_list">
+
+				<h2>국가코드 관리</h2>
+
+				<div id="seq">
+					<label for="Seq">Seq</label>
+					<input type="text" id="Seq">
+					<label for="nation">국가 이름</label>
+					<input type="text" id="nation">
+				</div>
+
+				<div id="nation">
+					<label for="nation_k">국가 이름(한글)</label>
+					<input type="text" id="nation_k">
+					<label for="nation_e">국가 이름(영어)</label>
+					<input type="text" id="nation_e">
+					<label for="nation_code02">국가 코드(2자리)</label>
+					<input type="text" id="nation_code02">
+					<label for="nation_code03">국가 코드(3자리)</label>
+					<input type="text" id="nation_code03">
+					<label for="status">사용여부</label>
+					<input type="text" id="status">
+					<label for="Sequence">순서</label>
+					<input type="text" id="Sequence">
+				</div>
+
+				<div id="explanation">
+					<label for="exp">설명</label>
+					<input type="text" id="exp">
+				</div>
+
+				<div class="box box01">
+					<a href="#">
+						<i class="fa-solid fa-bars"></i>
+					</a>
+				</div>
+				<div class="box box02">
+					<a href="#">
+						<i class="fa-regular fa-bookmark"></i>
+					</a>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<footer>
+		<div class="center">
+			<p>
+				(주)마이컴퍼니 |
+				대표 장원영 |
+				사업자 등록번호 111-11-111111 |
+				서울특별시 성동구 광나루로 123길 3층
+			</p>
+			<p>Copyight 2014. Mycompany.inc.rights</p>
+		</div>
+	</footer>
+</body>
+
+</html>
