@@ -42,35 +42,52 @@
 			height: 50px;
 			float: left;
 			line-height: 60px;
+			margin-left: 20px;
+			color: rgb(99, 51, 167);
 		}
-
+		.center h3 {
+			width: 30%;
+			height: 50px;
+			float: left;
+			line-height: 60px;
+			margin-top: 20px;
+			color: rgb(103, 94, 160);
+		}
+		
 		#logo {
 			width: 20%;
 			height: 100%;
 			float: left;
-
+			overflow: hidden;
+		}
+		
+		#logo img{
+			width: 100%;
+			float: left;
+			overflow: hidden;
 		}
 
 		#login {
 			width: 30%;
 			height: 100%;
 			float: right;
+			object-fit: cover;
 		}
 
-		.img {
+		.img img {
 			width: 40px;
 			height: 40px;
 			border-radius: 50%;
-			background-color: black;
 			float: left;
 			margin-right: 10px;
 			margin-top: 10px;
+			object-fit: cover;
 		}
 
 		#login span {
 			float: left;
 			margin-top: 10px;
-
+			color: rgb(89, 89, 89);
 		}
 
 		#user {
@@ -83,15 +100,24 @@
 			width: 45%;
 			height: 100%;
 			float: right;
-			margin-top: 20px;
+			margin-top: 15px;
 		}
 
+		#language button {
+			width: 60%;
+			height: 30px;
+			font-size: 14px;
+			background-color: rgb(185, 149, 255);
+			line-height: 15px;
+			border: none;
+		}
+		
 
 		/* 네비 */
 		nav {
 			width: 100%;
 			height: 50px;
-			background-color: rgb(229, 242, 251);
+			background-color: rgb(200, 180, 236);
 		}
 
 		nav ul li {
@@ -101,7 +127,7 @@
 		}
 
 		nav ul li a {
-			color: rgb(89, 89, 89);
+			color: rgb(252, 255, 255);
 		}
 
 
@@ -139,8 +165,8 @@
 			margin-right: 10px;
 		}
 
-		#manu ul li:last-of-type {
-			border-top: 1px solid rgb(227, 229, 233);
+		#manu>ul>li:last-of-type {
+			border-top: 1px solid rgb(198, 189, 232);
 		}
 
 		#main_list h2 {
@@ -150,23 +176,41 @@
 
 		#search {
 			width: 95%;
-			height: 150px;
+			height: 115px;
 			position: absolute;
 			top: 100px;
-			border: 2px solid red;
+			border: 1px solid rgb(161, 176, 232);
 		}
 
 		.search_box01 {
 			width: 100%;
-			background-color: darkgoldenrod;
 			float: left;
 		}
 
 		.search_box02 {
 			width: 100%;
-			background-color: darkgoldenrod;
 			float: left;
 		}
+
+
+		#box_search {
+			width: 80px;
+			float: left;
+		}
+
+		.box03 {
+			background-color: rgb(133, 166, 228);
+			margin: 12px 5px;
+		}
+
+		.box04 {
+			background-color: rgb(148, 119, 209);
+			margin: 12px 0;
+			;
+		}
+
+
+
 
 		.form-control {
 			width: 24%;
@@ -205,7 +249,7 @@
 
 		#main_list_title {
 
-			background-color: rgb(33, 37, 40);
+			background-color: rgb(120, 104, 151);
 			color: #fff;
 			font-size: 14px;
 		}
@@ -236,7 +280,7 @@
 			left: 50%;
 			transform: translateX(-50%);
 			background-color: rgb(49, 107, 244);
-			border-radius: 2px;
+			border-radius: 5px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -275,10 +319,11 @@
 			height: 30px;
 			float: left;
 			font-size: 18px;
-			border-radius: 2px;
+			border-radius: 5px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			border: none;
 		}
 
 		.box a {
@@ -297,13 +342,7 @@
 			background-color: rgb(49, 107, 244);
 		}
 
-		.box03 {
-			background-color: rgb(246, 195, 68);
-		}
 
-		.box04 {
-			background-color: rgb(203, 68, 74);
-		}
 
 		/* 푸터 */
 		footer {
@@ -322,22 +361,32 @@
 
 	<header>
 		<div class="center">
-			<div id="logo">로고</div>
+			<div id="logo">
+				<img src="../HTML/img/35 Beautiful Cloud Aesthetic Wallpaper Backgrounds For iPhone (Free Download!).jpeg">
+			</div>
 			<h2>ABC MAnagement System</h2>
 			<div id="login">
 				<div id="user">
-					<div class="img"><img></div>
-					<span>이름<br>Administrator</span>
+					<div class="img">
+						<img src="../HTML/img/9fbe4db3c2d1333c5e288e58c384c9bb.jpg">
+					</div>
+					<span class="login_name">이름<br>Administrator</span>
 				</div>
-				<div id="language">
-					<select name="language_box" id="language_box">
-						<option selected>언어</option>
-						<option value="korean">Korean</option>
-						<option value="english">English</option>
-						<option value="japanese">Japanese</option>
-						<option value="chinese">Chinese</option>
-					</select>
+
+
+				<div id="language" class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						언어
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Korean</a></li>
+						<li><a class="dropdown-item" href="#">English</a></li>
+						<li><a class="dropdown-item" href="#">Japanese</a></li>
+						<li><a class="dropdown-item" href="#">Chinese</a></li>
+					</ul>
 				</div>
+
+
 			</div>
 		</div>
 	</header>
@@ -360,16 +409,40 @@
 		<div class="center">
 			<div id="manu">
 				<ul>
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">Dashboard</a></li>
-					<li><a href="#">Orders</a></li>
-					<li><a href="#">Account</a></li>
+					<li><a href="#">HOME</a>
+						<ul class="sub_manu">
+							<li><a href="#">haha</a></li>
+							<li><a href="#">haha</a></li>
+							<li><a href="#">haha</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Dashboard</a>
+						<ul class="sub_manu">
+							<li><a href="#">haha</a></li>
+							<li><a href="#">haha</a></li>
+							<li><a href="#">haha</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Orders</a>
+						<ul class="sub_manu">
+							<li><a href="#">haha</a></li>
+							<li><a href="#">haha</a></li>
+							<li><a href="#">haha</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Account</a>
+						<ul class="sub_manu">
+							<li><a href="#">haha</a></li>
+							<li><a href="#">haha</a></li>
+							<li><a href="#">haha</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 
 			<div id="main_list">
 
-				<h2>국가 코드 관리</h2>
+				<h3>국가 코드 관리</h3>
 
 				<div id="search">
 					<div class="search_box01">
@@ -384,20 +457,21 @@
 							<option>검색 구분</option>
 
 							<input type="text" class="form-control" placeholder="검색어">
+							<div id="box_search">
+								<div class="box box03">
+									<a href="#">
+										<i class="fa-solid fa-magnifying-glass"></i>
+									</a>
+								</div>
+								<div class="box box04">
+									<a href="#">
+										<i class="fa-solid fa-rotate-left"></i>
+									</a>
+								</div>
+							</div>
 					</div>
 
-					<div id="box_search">
-						<div class="box box03">
-							<a href="#">
-								<i class="fa-solid fa-xmark"></i>
-							</a>
-						</div>
-						<div class="box box04">
-							<a href="#">
-								<i class="fa-regular fa-trash-can"></i>
-							</a>
-						</div>
-					</div>
+
 				</div>
 
 				<span id="total">Total</span>
@@ -449,16 +523,19 @@
 				<div id="under_box">
 
 					<div id="box_left">
-						<div class="box">
-							<a href="#">
-								<i class="fa-solid fa-xmark"></i>
-							</a>
-						</div>
-						<div class="box">
-							<a href="#">
-								<i class="fa-regular fa-trash-can"></i>
-							</a>
-						</div>
+
+						<button type="button" class="box btn btn-primary" data-bs-toggle="modal"
+							data-bs-target="#staticBackdrop">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+
+
+						<button type="button" class="box btn btn-primary" data-bs-toggle="modal"
+							data-bs-target="#staticBackdrop2">
+							<i class="fa-regular fa-trash-can"></i>
+						</button>
+
+
 					</div>
 
 					<div id="box_right">
@@ -468,7 +545,7 @@
 							</a>
 						</div>
 						<div class="box box02">
-							<a href="#">
+							<a href="kaionex_sub.html">
 								<i class="fa-solid fa-plus"></i>
 							</a>
 						</div>
@@ -477,6 +554,48 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="staticBackdropLabel">삭제 하기</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>선택 하신 파일을 영구 삭제 하시겠습니까?<br> 삭제하신 파일은 복구가 불가능합니다.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+					<button type="button" class="btn btn-primary">삭제</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal 2 -->
+	<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="staticBackdropLabel">버리기</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>선택 하신 파일을 휴지통으로 이동 하시겠습니까?<br> 버린 파일은 30일간 휴지통에 보관 후 삭제 됩니다.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+					<button type="button" class="btn btn-primary">삭제</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<footer>
 		<div class="center">
 			<p>
@@ -488,9 +607,48 @@
 			<p>Copyight 2014. Mycompany.inc.rights</p>
 		</div>
 	</footer>
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
+
+
+	<script>
+	
+	window.onload = function() {
+		const subManus = document.getElementsByClassName("sub_manu");
+		for (let i = 0; i < subManus.length; i++){
+			subManus[i].style.display = "none";
+		}
+	
+		const menuLinks = document.querySelectorAll("#manu > ul > li > a");
+		menuLinks.forEach(function(link){
+			link.addEventListener("click",function(event){
+				event.preventDefault();
+				const subManu = this.nextElementSibling;
+				if (subManu.style.display === "none"){
+					subManu.style.display = "block";
+				} else {
+					subManu.style.display = "none";
+				}
+			});
+		});
+	};
+
+
+		$("#modalConfirm").modal("show");
+		const myModal = document.getElementById('myModal')
+		const myInput = document.getElementById('myInput')
+
+		myModal.addEventListener('shown.bs.modal', () => {
+			myInput.focus()
+		})
+		
+		
+
+	</script>
+
+
 </body>
 
 </html>
