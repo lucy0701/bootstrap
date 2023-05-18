@@ -45,6 +45,7 @@
 			margin-left: 20px;
 			color: rgb(99, 51, 167);
 		}
+
 		.center h3 {
 			width: 30%;
 			height: 50px;
@@ -53,7 +54,7 @@
 			margin-top: 20px;
 			color: rgb(103, 94, 160);
 		}
-		
+
 		#logo {
 			width: 20%;
 			height: 100%;
@@ -61,7 +62,7 @@
 			overflow: hidden;
 		}
 
-		#logo img{
+		#logo img {
 			width: 100%;
 			float: left;
 			overflow: hidden;
@@ -112,6 +113,10 @@
 			border: none;
 		}
 
+		#language button:hover {
+			background-color: rgb(135, 85, 248);
+		}
+
 		/* 네비 */
 		nav {
 			width: 100%;
@@ -120,13 +125,17 @@
 		}
 
 		nav ul li {
-			margin-left: 10px;
+			margin-left: 30px;
 			display: inline-block;
 			line-height: 50px;
 		}
 
 		nav ul li a {
 			color: rgb(252, 255, 255);
+		}
+
+		nav ul li a:hover {
+			color: rgb(82, 128, 246);
 		}
 
 		/* 메인 */
@@ -158,7 +167,7 @@
 			font-size: 15px;
 		}
 
-		#manu ul li a::before {
+		#manu>ul>li>a::before {
 			content: ">";
 			margin-right: 10px;
 		}
@@ -282,7 +291,8 @@
 	<header>
 		<div class="center">
 			<div id="logo">
-				<img src="../HTML/img/35 Beautiful Cloud Aesthetic Wallpaper Backgrounds For iPhone (Free Download!).jpeg">
+				<img
+					src="../HTML/img/35 Beautiful Cloud Aesthetic Wallpaper Backgrounds For iPhone (Free Download!).jpeg">
 			</div>
 			<h2>ABC Management System</h2>
 			<div id="login">
@@ -388,7 +398,7 @@
 							<label for="validationCustom04" class="form-label">국가 코드 (2자리) <span>*</span></label>
 							<input type="text" class="form-control  textbox01" id="validationCustom04"
 								placeholder="영대소문자" required>
-								
+
 							<label for="validationCustom05" class="form-label">사용 여부 <span>*</span></label>
 							<select class="form-control" id="validationCustom05">
 								<option value="Y">Yes</option>
@@ -459,19 +469,20 @@
 	crossorigin="anonymous"></script>
 
 <script>
-	
-		window.onload = function() {
+
+	// 메뉴 토글
+	window.onload = function () {
 		const subManus = document.getElementsByClassName("sub_manu");
-		for (let i = 0; i < subManus.length; i++){
+		for (let i = 0; i < subManus.length; i++) {
 			subManus[i].style.display = "none";
 		}
-	
+
 		const menuLinks = document.querySelectorAll("#manu > ul > li > a");
-		menuLinks.forEach(function(link){
-			link.addEventListener("click",function(event){
+		menuLinks.forEach(function (link) {
+			link.addEventListener("click", function (event) {
 				event.preventDefault();
 				const subManu = this.nextElementSibling;
-				if (subManu.style.display === "none"){
+				if (subManu.style.display === "none") {
 					subManu.style.display = "block";
 				} else {
 					subManu.style.display = "none";
@@ -480,25 +491,42 @@
 		});
 	};
 
+	// 하위 내용들 주석 잡고 구현 필요
+
+		const form = document.querySelector(".needs-validation");
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			if (form.checkValidity() === false) {
+			event.stopPropagation();
+		} else {
+			alert("작성이 완료 되었습니다.")
+			form.submit();
+		}
+		
+		form.classList.add('was-validated');
+		});
+
+
 	// Example starter JavaScript for disabling form submissions if there are invalid fields
-	(() => {
-		'use strict'
+	//(() => {
+	//	'use strict'
 
 		// Fetch all the forms we want to apply custom Bootstrap validation styles to
-		const forms = document.querySelectorAll('.needs-validation')
+	//	const forms = document.querySelectorAll('.needs-validation')
 
 		// Loop over them and prevent submission
-		Array.from(forms).forEach(form => {
-			form.addEventListener('submit', event => {
-				if (!form.checkValidity()) {
-					event.preventDefault()
-					event.stopPropagation()
-				}
+	//	Array.from(forms).forEach(form => {
+	//		form.addEventListener('submit', event => {
+	//			if (!form.checkValidity()) {
+	//				event.preventDefault()
+	//				event.stopPropagation()
+	//			}
 
-				form.classList.add('was-validated')
-			}, false)
-		})
-	})()
+	//			form.classList.add('was-validated')
+	//		}, false)
+	//	})
+	//})()
 
 </script>
 
