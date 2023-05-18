@@ -471,31 +471,26 @@
 <script>
 
 	// 메뉴 토글
-	window.onload = function () {
-		const subManus = document.getElementsByClassName("sub_manu");
-		for (let i = 0; i < subManus.length; i++) {
-			subManus[i].style.display = "none";
-		}
+		$(document).ready(function () {
+			$(".sub_manu").hide();
 
-		const menuLinks = document.querySelectorAll("#manu > ul > li > a");
-		menuLinks.forEach(function (link) {
-			link.addEventListener("click", function (event) {
+			$("#manu > ul > li > a").click(function (event) {
 				event.preventDefault();
-				const subManu = this.nextElementSibling;
-				if (subManu.style.display === "none") {
-					subManu.style.display = "block";
+				var subManu = $(this).next(".sub_manu");
+				if (subManu.css("display") === "none") {
+					subManu.slideToggle();
 				} else {
-					subManu.style.display = "none";
+					subManu.slideToggle();
 				}
 			});
 		});
-	};
 
 	// 하위 내용들 주석 잡고 구현 필요
 
 		const form = document.querySelector(".needs-validation");
 
 		form.addEventListener('submit', (event) => {
+			alert("다시 입력 하세요.")
 			event.preventDefault();
 			if (form.checkValidity() === false) {
 			event.stopPropagation();
