@@ -166,7 +166,12 @@
 			box-sizing: border-box;
 			line-height: 40px;
 			color: rgb(116, 121, 144);
-			font-size: 15px;
+			border-radius: 10px;
+			transition: 1s;
+		}
+		#manu ul li a:hover {
+			background-color: rgb(197, 210, 255);
+			border-radius: 10px;
 		}
 
 		#manu>ul>li>a::before {
@@ -252,16 +257,24 @@
 			color: #fff;
 		}
 
-		.box01 {
-			background-color: rgb(128, 178, 224);
+		.box01 a {
+
 			width: 30px;
 			height: 30px;
-			font-size: 18px;
 			border-radius: 5px;
 			position: absolute;
 			bottom: 100px;
 			left: 0;
+			display: block;
+			font-size: 18px;
+			background-color: rgb(128, 178, 224);
+			text-align: center;
+			line-height: 30px;
 		}
+		.box01 a:hover {
+			background-color: rgb(91, 131, 212);
+		}
+		
 
 		.box02 button {
 			background-color: rgb(145, 134, 199);
@@ -273,6 +286,9 @@
 			position: absolute;
 			bottom: 100px;
 			right: 100px;
+		}
+		.box02 button:hover {
+			background-color: rgb(104, 68, 159);
 		}
 
 		/* 푸터 */
@@ -442,7 +458,7 @@
 					</div>
 
 					<div class="box box02">
-						<button class="btn btn-primary" type="submit"><i class="fa-regular fa-bookmark"></i></button>
+						<button class="btn btn-primary" type="button"><i class="fa-regular fa-bookmark"></i></button>
 					</div>
 
 				</form>
@@ -488,21 +504,29 @@
 		});
 
 	// 하위 내용들 주석 잡고 구현 필요
-
-		const form = document.querySelector(".needs-validation");
-
-		form.addEventListener('submit', (event) => {
-			alert("다시 입력 하세요.")
-			event.preventDefault();
-			if (form.checkValidity() === false) {
-			event.stopPropagation();
-		} else {
-			alert("작성이 완료 되었습니다.")
-			form.submit();
-		}
-		
-		form.classList.add('was-validated');
+	
+		$("form button[type='button']").on("click", function () {
+			if (".needs-validation input[value='']") {
+				$("form").addClass("was-validated");
+			}
 		});
+	
+	
+
+
+		//const form = document.querySelector(".needs-validation");
+
+		//form.addEventListener('submit', (event) => {
+		//	event.preventDefault();
+		//	if (form.checkValidity() === false) {
+		//	event.stopPropagation();
+		//} else {
+		//	alert("작성이 완료 되었습니다.")
+		//	form.submit();
+		//}
+		
+		//form.classList.add('was-validated');
+		//});
 
 
 	// Example starter JavaScript for disabling form submissions if there are invalid fields
